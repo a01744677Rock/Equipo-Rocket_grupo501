@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equipo Rocket | Aerospace Technology</title>
+  <meta name="description" content="Equipo Rocket · Aerospace Technology. Despegamos para hacer historia.">
+  <meta name="theme-color" content="#050B18">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta property="og:title" content="Equipo Rocket | Aerospace Technology">
+  <meta property="og:description" content="Despegamos para hacer historia.">
+  <meta property="og:image" content="assets/logos/emblema-rocket.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Fondo animado: cohete despegando ===== -->
+  <div class="launch-bg" aria-hidden="true">
+    <canvas id="stars"></canvas>
+    <div class="nebula"></div>
+    <div class="rocket-wrap" id="rocket">
+      <div class="trail" id="trail"></div>
+      <img class="rocket" src="assets/logos/cohete.svg" alt="">
+    </div>
+    <div class="smoke">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <svg class="pad" viewBox="0 0 400 120" preserveAspectRatio="xMidYMax meet">
+      <path d="M150 120 L170 40 L176 40 L160 120 Z M250 120 L230 40 L224 40 L240 120 Z" fill="#0d1a30"/>
+      <rect x="166" y="34" width="68" height="8" fill="#13243f"/>
+      <rect x="120" y="108" width="160" height="12" fill="#0d1a30"/>
+      <path d="M0 120 L0 112 L120 104 L280 104 L400 112 L400 120 Z" fill="#081224"/>
+    </svg>
+    <div class="horizon-glow"></div>
+  </div>
+
+  <!-- Detalle escondido (easter egg original) -->
+  <button class="secret" id="secret" aria-label="Señal desconocida">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="15" y="15" width="10" height="10" rx="2" fill="#A7B1BC"/>
+      <rect x="2" y="17" width="11" height="6" fill="#1E9BD7"/>
+      <rect x="27" y="17" width="11" height="6" fill="#1E9BD7"/>
+      <path d="M20 15 V8 M17 8 H23" stroke="#A7B1BC" stroke-width="1.5"/>
+      <text x="20" y="23.5" font-size="8" font-family="Orbitron, sans-serif" font-weight="800" text-anchor="middle" fill="#C8102E">R</text>
+    </svg>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ===== Navbar ===== -->
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#inicio" aria-label="Equipo Rocket, inicio">
+      <img src="assets/logos/logo-horizontal-oscuro.svg" alt="Equipo Rocket · Aerospace Technology">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Principal">
+      <a href="#inicio">Misión</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#fases">Fases</a>
+      <a href="#identidad">Identidad</a>
+      <a href="#tripulacion">Tripulación</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow reveal">Una nueva órbita comienza</p>
+        <img class="hero-emblem reveal" src="assets/logos/emblema-rocket.svg" alt="Emblema de Equipo Rocket">
+        <p class="tag reveal">Equipo Rocket · Aerospace Technology</p>
+        <h1 class="reveal">Despegamos <em>para hacer historia</em></h1>
+        <p class="question reveal">¿Y si el próximo gran lanzamiento comienza aquí?</p>
+        <p class="lead reveal">Ingeniería, trabajo en equipo y una misión clara: llevar nuestro cohete del papel al cielo.</p>
+
+        <div class="status reveal">
+          <div class="status-row">
+            <span class="status-label">Fase actual</span>
+            <span class="status-phase" id="phaseName">—</span>
+            <span class="badge badge-live" id="phaseBadge">En proceso</span>
+          </div>
+          <ol class="tracker" id="tracker"></ol>
+        </div>
+
+        <div class="countdown reveal" aria-label="Cuenta regresiva para el despegue">
+          <p class="countdown-label">Despegue próximamente · <span>Cuenta regresiva</span></p>
+          <div class="countdown-grid">
+            <div><strong id="cd-d">00</strong><span>Días</span></div>
+            <div><strong id="cd-h">00</strong><span>Horas</span></div>
+            <div><strong id="cd-m">00</strong><span>Min</span></div>
+            <div><strong id="cd-s">00</strong><span>Seg</span></div>
+          </div>
+        </div>
+
+        <div class="cta reveal">
+          <a class="btn btn-primary" href="#objetivos">Descubre qué despega <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#identidad">Explora la identidad <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#banda" aria-label="Bajar a la siguiente sección"><span></span></a>
+    </section>
+
+    <!-- ===== Banda ===== -->
+    <section class="band" id="banda">
+      <p>El futuro no se espera. <strong>Se lanza.</strong></p>
+    </section>
+
+    <!-- ===== Objetivos ===== -->
+    <section class="section" id="objetivos">
+      <header class="section-head reveal">
+        <p class="kicker">01 / Misión</p>
+        <h2>Objetivos del proyecto</h2>
+      </header>
+      <div class="cards">
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c7 6 10 14 10 22l-4 8H18l-4-8c0-8 3-16 10-22Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M18 34l-6 6v-10M30 34l6 6v-10M24 36v8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <h3>Construir un cohete propio</h3>
+          <p>Diseñar, fabricar y lanzar un cohete desarrollado por el equipo, de principio a fin.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/><ellipse cx="24" cy="24" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="2.5"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)" fill="none" stroke="currentColor" stroke-width="2.5"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(-60 24 24)" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+          <h3>Aprender ingeniería aeroespacial</h3>
+          <p>Aplicar física, aerodinámica, propulsión y electrónica en un proyecto real.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="32" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M4 40c0-7 5-12 12-12s12 5 12 12M20 40c0-7 5-12 12-12s12 5 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <h3>Trabajar en equipo</h3>
+          <p>Cada integrante aporta su especialidad para que la misión funcione como un solo sistema.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44s-14-12-14-24a14 14 0 0 1 28 0c0 12-14 24-14 24Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M24 12l2.4 5 5.6.8-4 3.9.9 5.5L24 24.6l-4.9 2.6.9-5.5-4-3.9 5.6-.8Z" fill="currentColor"/></svg>
+          <h3>Representar a nuestra región</h3>
+          <p>Demostrar que desde aquí también se hace tecnología aeroespacial de alto nivel.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Fases ===== -->
+    <section class="section" id="fases">
+      <header class="section-head reveal">
+        <p class="kicker">02 / Plan de vuelo</p>
+        <h2>Fases de la misión</h2>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- ===== Identidad visual ===== -->
+    <section class="section" id="identidad">
+      <header class="section-head reveal">
+        <p class="kicker">03 / Identidad visual</p>
+        <h2>Nuestra marca</h2>
+      </header>
+      <div class="identity">
+        <figure class="identity-main reveal">
+          <img src="assets/logos/variaciones/01_logo_principal_color.svg" alt="Logo principal de Equipo Rocket a color">
+          <figcaption>Logo principal (recomendado)</figcaption>
+        </figure>
+        <div class="identity-grid">
+          <figure class="reveal"><img src="assets/logos/variaciones/02_circular_fondo_oscuro.svg" alt="Logo circular sobre fondo oscuro" loading="lazy"><figcaption>Fondo oscuro</figcaption></figure>
+          <figure class="reveal"><img src="assets/logos/variaciones/03_circular_monocromatico_negro.svg" alt="Logo monocromático negro" loading="lazy"><figcaption>Monocromático negro</figcaption></figure>
+          <figure class="reveal"><img src="assets/logos/variaciones/04_circular_monocromatico_azul.svg" alt="Logo monocromático azul" loading="lazy"><figcaption>Monocromático azul</figcaption></figure>
+          <figure class="reveal"><img src="assets/logos/variaciones/05_circular_escala_grises.svg" alt="Logo en escala de grises" loading="lazy"><figcaption>Escala de grises</figcaption></figure>
+          <figure class="reveal"><img src="assets/logos/variaciones/06_circular_trazo_linea.svg" alt="Logo en trazo de línea" loading="lazy"><figcaption>Trazo / línea</figcaption></figure>
+          <figure class="reveal"><img src="assets/logos/variaciones/25_logo_fondo_carbono_neon.svg" alt="Logo sobre fondo de carbono con texto neón" loading="lazy"><figcaption>Carbono neón</figcaption></figure>
+        </div>
+      </div>
+      <ul class="palette reveal" aria-label="Paleta de colores oficial">
+        <li style="--c:#003D6D"><span class="swatch"></span><b>Deep Blue</b><code>#003D6D</code></li>
+        <li style="--c:#0B2545"><span class="swatch"></span><b>Navy</b><code>#0B2545</code></li>
+        <li style="--c:#1EC8F0"><span class="swatch"></span><b>Cyan Glow</b><code>#1EC8F0</code></li>
+        <li style="--c:#C8102E"><span class="swatch"></span><b>Rocket Red</b><code>#C8102E</code></li>
+        <li style="--c:#A7B1BC"><span class="swatch"></span><b>Metal Silver</b><code>#A7B1BC</code></li>
+        <li style="--c:#1E9BD7"><span class="swatch"></span><b>Sky Blue</b><code>#1E9BD7</code></li>
+      </ul>
+    </section>
+
+    <!-- ===== Tripulación ===== -->
+    <section class="section" id="tripulacion">
+      <header class="section-head reveal">
+        <p class="kicker">04 / Tripulación</p>
+        <h2>Tripulación de la misión</h2>
+      </header>
+      <div class="crew" id="crew"></div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <img src="assets/logos/emblema-blanco.svg" alt="" class="footer-emblem">
+    <p class="footer-brand">EQUIPO ROCKET · AEROSPACE TECHNOLOGY</p>
+    <p class="footer-sub">S.A. de C.V.</p>
+    <p class="footer-log">T–26 / MISSION LOG</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

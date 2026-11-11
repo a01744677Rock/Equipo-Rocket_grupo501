@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="100mm" height="100mm" viewBox="0 0 1000 1000" version="1.1">
+  <title>Equipo Rocket — Circular monocromático azul</title>
+  <desc>Sticker circular 100 x 100 mm (Ø 100 mm). 1 unidad = 0.1 mm. Arte 100% vectorial, textos convertidos a curvas.
+Capas: Fondo, Arte, CutContour (línea de suaje/corte, no imprimir). Zona segura: Ø 90 mm.</desc>
+  <defs>
+    <clipPath id="s04clip"><circle cx="500" cy="500" r="500"/></clipPath>
+    
+  </defs>
+  <g id="Fondo" inkscape:groupmode="layer" inkscape:label="Fondo">
+    <circle cx="500" cy="500" r="500" fill="#FFFFFF"/>
+  </g>
+  <g id="Arte" inkscape:groupmode="layer" inkscape:label="Arte" clip-path="url(#s04clip)">
+    <circle cx="500" cy="500" r="462" fill="none" stroke="#1E9BD7" stroke-width="18"/><g transform="translate(500.00,505.00) scale(1.0200) translate(-450,-313)"><path d="M450,96 L662,194 L662,470 L450,618 L238,470 L238,194 Z M450,126 L636,212 L636,457 L450,586 L264,457 L264,212 Z" fill="#1E9BD7" fill-rule="evenodd"/><path d="M356,432 L544,432 L544,500 L450,566 L356,500 Z" fill="none" stroke="#1E9BD7" stroke-width="12" stroke-linejoin="round"/><path d="M384,446 L426,540" stroke="#1E9BD7" stroke-width="12" stroke-linecap="round"/><path d="M516,446 L474,540" stroke="#1E9BD7" stroke-width="12" stroke-linecap="round"/><path d="M444,398 L456,398 L456,582 L444,582 Z" fill="#1E9BD7"/><path d="M450,6 C472,40 490,95 491,150 L487,200 L413,200 L409,150 C410,95 428,40 450,6 Z" fill="#ffffff" stroke="#ffffff" stroke-width="26" stroke-linejoin="round"/><path d="M413,118 L370,198 L378,224 L411,202 Z" fill="#1E9BD7" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/><path d="M487,118 L530,198 L522,224 L489,202 Z" fill="#1E9BD7" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/><path d="M450,6 C472,40 490,95 491,150 L487,200 L413,200 L409,150 C410,95 428,40 450,6 Z" fill="#ffffff" stroke="#1E9BD7" stroke-width="10" stroke-linejoin="round"/><path d="M450,30 L463,64 L450,94 L437,64 Z" fill="#1E9BD7"/><path d="M446,100 L421,114 L419,162 L446,150 Z" fill="#1E9BD7"/><path d="M454,100 L479,114 L481,162 L454,150 Z" fill="#1E9BD7"/><path d="M450,156 L480,170 L478,198 L450,186 L422,198 L420,170 Z" fill="#1E9BD7"/><path d="M436,204 L430,246" stroke="#1E9BD7" stroke-width="9" stroke-linecap="round"/><path d="M450,204 L450,256" stroke="#1E9BD7" stroke-width="9" stroke-linecap="round"/><path d="M464,204 L470,246" stroke="#1E9BD7" stroke-width="9" stroke-linecap="round"/><path d="M186,244 L562,244 C622,244 642,276 642,318 C642,366 612,396 560,398 L548,398 L712,590 L636,590 L482,404 L386,404 L269,590 L182,590 L378,300 Z" fill="#ffffff" stroke="#ffffff" stroke-width="22" stroke-linejoin="round"/><path d="M186,244 L562,244 C622,244 642,276 642,318 C642,366 612,396 560,398 L548,398 L712,590 L636,590 L482,404 L386,404 L269,590 L182,590 L378,300 Z M448,304 L550,304 C578,304 590,320 590,336 C590,356 574,368 548,368 L408,368 Z" fill="#1E9BD7" fill-rule="evenodd"/><path d="M212,254 L386,293" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/><path d="M450,310 L450,348" stroke="#1E9BD7" stroke-width="10"/></g>
+  </g>
+  </svg>
